@@ -1,0 +1,14 @@
+# Ignorar archivos compilados
+*.class
+
+# Ignorar carpeta target de Maven
+/target/
+
+# Ignorar configuraciones de IDEs
+.idea/
+*.iml
+
+# Ignorar backups
+*.log
+*.tmp
+*.bak

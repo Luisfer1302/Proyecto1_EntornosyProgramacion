@@ -1,4 +1,3 @@
-package tienda;
 
 import java.time.LocalDateTime;
 import java.util.Map;

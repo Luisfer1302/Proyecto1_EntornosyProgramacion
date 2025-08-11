@@ -1,4 +1,4 @@
-package tienda;
+
 
 public class Cliente {
     private String nombre;

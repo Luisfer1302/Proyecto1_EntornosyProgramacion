@@ -1,4 +1,3 @@
-package tienda;
 
 public class MaterialSanitario {
     private String nombre;
