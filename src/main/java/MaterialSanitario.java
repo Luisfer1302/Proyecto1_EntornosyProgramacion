@@ -5,7 +5,7 @@ public class MaterialSanitario {
     private double precio;
     private int stock;
 
-    public MaterialSanitario(String nombre, String categoria, double precio, int stock) {
+    public MaterialSanitario(String nombre, double precio) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
@@ -26,4 +26,5 @@ public class MaterialSanitario {
     public String toString() {
         return "Material {Nombre='" + nombre + "', Categoría='" + categoria + "', Precio=" + precio + "€, Stock=" + stock + "}";
     }
+
 }

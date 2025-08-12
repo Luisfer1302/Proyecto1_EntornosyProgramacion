@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class GestorClientes {
 
     public Cliente buscarClientePorDNI(String dni) {
         for (Cliente c : clientes) {
-            if (c.getDni().equalsIgnoreCase(dni)) {
+            if (c.getDni() != null && c.getDni().equalsIgnoreCase(dni)) {
                 return c;
             }
         }
@@ -34,6 +32,6 @@ public class GestorClientes {
     }
 
     public void eliminarCliente(String dni) {
-        clientes.removeIf(c -> c.getDni().equalsIgnoreCase(dni));
+        clientes.removeIf(c -> c.getDni() != null && c.getDni().equalsIgnoreCase(dni));
     }
 }

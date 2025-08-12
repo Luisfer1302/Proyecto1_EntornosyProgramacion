@@ -13,6 +13,12 @@ public class Venta {
         this.fecha = LocalDateTime.now();
     }
 
+    public Venta(MaterialSanitario m, Cliente c, int i) {
+    }
+
+    public Venta(Cliente c, MaterialSanitario m, int i) {
+    }
+
     public Cliente getCliente() {
         return cliente;
     }

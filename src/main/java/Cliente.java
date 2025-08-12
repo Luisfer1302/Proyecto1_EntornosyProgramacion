@@ -1,11 +1,10 @@
-
-
 public class Cliente {
     private String nombre;
     private String dni;
     private String telefono;
     private String email;
 
+    // Constructor con todos los datos
     public Cliente(String nombre, String dni, String telefono, String email) {
         this.nombre = nombre;
         this.dni = dni;
@@ -13,6 +12,7 @@ public class Cliente {
         this.email = email;
     }
 
+    // Getters
     public String getNombre() { return nombre; }
     public String getDni() { return dni; }
     public String getTelefono() { return telefono; }
@@ -20,6 +20,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente {Nombre='" + nombre + "', DNI='" + dni + "', Teléfono='" + telefono + "', Email='" + email + "'}";
+        return "Cliente {Nombre='" + nombre + "', DNI='" + dni +
+                "', Teléfono='" + telefono + "', Email='" + email + "'}";
     }
 }

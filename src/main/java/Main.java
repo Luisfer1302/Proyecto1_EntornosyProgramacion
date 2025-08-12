@@ -34,7 +34,7 @@ public class Main {
                     System.out.print("Stock: ");
                     int stock = scanner.nextInt();
                     scanner.nextLine();
-                    inventario.agregarMaterial(new MaterialSanitario(nombre, categoria, precio, stock));
+                    inventario.agregarMaterial(new MaterialSanitario(nombre, precio));
                     break;
                 case 2:
                     inventario.mostrarMateriales();
