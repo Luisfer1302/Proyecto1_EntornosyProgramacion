@@ -8,11 +8,27 @@ public class ClienteTest {
 
     @BeforeEach
     void setUp() {
-        cliente = new Cliente("Luis", "Luis"); // Solo nombre
+        // Usamos el constructor con dos parámetros
+        cliente = new Cliente("Luis", "012345678L", "603216546", "proyecto@prueba.com");
     }
 
     @Test
     void testGetNombre() {
         assertEquals("Luis", cliente.getNombre());
+    }
+
+    @Test
+    void testGetDni() {
+        assertEquals("012345678L", cliente.getDni());
+    }
+
+    @Test
+    void testTelefonoPorDefecto() {
+        assertEquals("Sin teléfono", cliente.getTelefono());
+    }
+
+    @Test
+    void testEmailPorDefecto() {
+        assertEquals("Sin email", cliente.getEmail());
     }
 }

@@ -3,12 +3,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        //Creación de los gestores principales
         Inventario inventario = new Inventario();
         GestorClientes gestorClientes = new GestorClientes();
         GestorVentas gestorVentas = new GestorVentas();
         Scanner scanner = new Scanner(System.in);
         int opcion;
-
+        //Menú principal del sistema, se repite hasta que el usuario elija salir
         do {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
             System.out.println("1. Agregar material sanitario");
@@ -25,6 +26,7 @@ public class Main {
 
             switch (opcion) {
                 case 1:
+                    //Agregar un nuevo material al inventario
                     System.out.print("Nombre: ");
                     String nombre = scanner.nextLine();
                     System.out.print("Categoría: ");
@@ -34,12 +36,14 @@ public class Main {
                     System.out.print("Stock: ");
                     int stock = scanner.nextInt();
                     scanner.nextLine();
-                    inventario.agregarMaterial(new MaterialSanitario(nombre, precio));
+                    inventario.agregarMaterial(new MaterialSanitario(nombre, categoria, precio, stock));
                     break;
                 case 2:
+                    //Mostrar todos los materiales del inventario
                     inventario.mostrarMateriales();
                     break;
                 case 3:
+                    //Agregar un nuevo cliente al sistema
                     System.out.print("Nombre cliente: ");
                     String nom = scanner.nextLine();
                     System.out.print("DNI: ");
@@ -51,9 +55,11 @@ public class Main {
                     gestorClientes.agregarCliente(new Cliente(nom, dni, tel, email));
                     break;
                 case 4:
+                    //Mostrar todos los clientes registrados
                     gestorClientes.mostrarClientes();
                     break;
                 case 5:
+                    //Registrar una venta para un cliente
                     System.out.print("DNI del cliente: ");
                     String dniCliente = scanner.nextLine();
                     Cliente cliente = gestorClientes.buscarClientePorDNI(dniCliente);
@@ -61,8 +67,10 @@ public class Main {
                         System.out.println("Cliente no encontrado.");
                         break;
                     }
+                    //Carrito de productos para la venta
                     Map<MaterialSanitario, Integer> carrito = new HashMap<>();
                     while (true) {
+                        //Permite agregar varios productos a la venta
                         System.out.print("Nombre del material (vacío para finalizar): ");
                         String prodNombre = scanner.nextLine();
                         if (prodNombre.isEmpty()) break;
@@ -74,6 +82,7 @@ public class Main {
                         System.out.print("Cantidad: ");
                         int cantidad = scanner.nextInt();
                         scanner.nextLine();
+                        //Validar stock
                         if (cantidad > producto.getStock()) {
                             System.out.println("Stock insuficiente.");
                         } else {
@@ -81,6 +90,7 @@ public class Main {
                             producto.setStock(producto.getStock() - cantidad);
                         }
                     }
+                    //Registrar la venta si se agregaron productos
                     if (!carrito.isEmpty()) {
                         Venta nuevaVenta = new Venta(cliente, carrito);
                         gestorVentas.registrarVenta(nuevaVenta);
@@ -90,9 +100,11 @@ public class Main {
                     }
                     break;
                 case 6:
+                    //Mostrar todas las ventas registradas
                     gestorVentas.mostrarVentas();
                     break;
                 case 7:
+                    //Mostrar ventas de un cliente específico
                     System.out.print("DNI del cliente: ");
                     String buscarDni = scanner.nextLine();
                     gestorVentas.mostrarVentasPorCliente(buscarDni);
@@ -103,7 +115,7 @@ public class Main {
                 default:
                     System.out.println("Opción inválida.");
             }
-        } while (opcion != 8);
-        scanner.close();
+        } while (opcion != 8); //Se repite hasta que el cliente elija salir
+        scanner.close(); //Cierra el scanner
     }
 }

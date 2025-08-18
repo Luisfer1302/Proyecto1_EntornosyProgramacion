@@ -13,7 +13,7 @@ public class InventarioTest {
 
     @Test
     void testAgregarProducto() {
-        MaterialSanitario m = new MaterialSanitario("Guantes", 50);
+        MaterialSanitario m = new MaterialSanitario("Guantes", "protección", 3.0, 300);
         inventario.agregarMaterial(m);
         assertEquals(1, inventario.getClass().isSealed());
     }

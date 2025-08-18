@@ -12,14 +12,17 @@ public class Cliente {
         this.email = email;
     }
 
-    // Getters
+    // Métodos para acceder/ modificar los atributos
     public String getNombre() { return nombre; }
     public String getDni() { return dni; }
     public String getTelefono() { return telefono; }
     public String getEmail() { return email; }
 
+
+    // Representación en forma de texto del cliente
     @Override
     public String toString() {
+        //Devuelve un String con los datos principales del cliente
         return "Cliente {Nombre='" + nombre + "', DNI='" + dni +
                 "', Teléfono='" + telefono + "', Email='" + email + "'}";
     }

@@ -8,8 +8,8 @@ public class VentaTest {
 
     @BeforeEach
     void setUp() {
-        MaterialSanitario m = new MaterialSanitario("Gel", 20);
-        Cliente c = new Cliente("Luis", "Calle Falsa 123");
+        MaterialSanitario m = new MaterialSanitario("Gel", "desinfección", 2.5, 100);
+        Cliente c = new Cliente("Luis", "012345678L", "600032158", "proyecto@prueba.com");
         venta = new Venta(c, m, 5);
     }
 

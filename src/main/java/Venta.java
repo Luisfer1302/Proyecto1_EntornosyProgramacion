@@ -2,6 +2,8 @@
 import java.time.LocalDateTime;
 import java.util.Map;
 
+//Almacena los datos de cada venta, permite calcular el total de la venta y realiza un representación de la venta.
+
 public class Venta {
     private Cliente cliente;
     private Map<MaterialSanitario, Integer> items;

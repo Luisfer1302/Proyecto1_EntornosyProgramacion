@@ -9,7 +9,7 @@ public class MaterialSanitarioTest {
 
     @BeforeEach
     void setUp() {
-        material = new MaterialSanitario("Mascarilla", 100);
+        material = new MaterialSanitario("Mascarilla", "Protección", 0.0, 100);
     }
 
     @Test
